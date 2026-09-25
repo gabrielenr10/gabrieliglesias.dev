@@ -1,0 +1,40 @@
+---
+import Navbar from '@components/Navbar.astro'
+import Footer from '@components/Footer.astro'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Gabriel Iglesias — Software Engineer',
+  description = "Gabriel's personal portfolio website",
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-white text-neutral-900 antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded focus:bg-neutral-900 focus:px-3 focus:py-2 focus:text-white"
+    >
+      Skip to content
+    </a>
+    <Navbar />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

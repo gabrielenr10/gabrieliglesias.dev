@@ -1,0 +1,57 @@
+---
+import type { Profile } from '../data/profile'
+
+interface Props {
+  profile: Profile
+}
+
+const { profile } = Astro.props
+---
+
+<section id="home" aria-labelledby="hero-title" class="scroll-mt-24">
+  <div class="mx-auto grid max-w-4xl gap-8 px-4 py-12 text-center sm:py-16 md:grid-cols-[1fr_1.4fr] md:items-center md:text-left">
+    <div class="mx-auto md:mx-0">
+      <img
+        src={profile.imageSrc}
+        alt={profile.imageAlt}
+        width="320"
+        height="320"
+        loading="eager"
+        decoding="async"
+        class="h-40 w-40 rounded-full border border-neutral-200 bg-neutral-100 object-cover sm:h-48 sm:w-48 md:h-64 md:w-64"
+        onerror="this.style.display='none'"
+      />
+    </div>
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+        {profile.role}
+      </p>
+      <h1
+        id="hero-title"
+        class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
+      >
+        Hi, I&apos;m {profile.name}
+      </h1>
+      <p class="mt-3 text-base font-medium text-neutral-800 sm:text-lg">
+        {profile.tagline}
+      </p>
+      <p class="mx-auto mt-3 max-w-prose text-sm leading-relaxed text-neutral-600 md:mx-0 sm:text-base">
+        {profile.summary}
+      </p>
+      <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
+        <a
+          href="#experience"
+          class="rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-700"
+        >
+          View experience
+        </a>
+        <a
+          href="#contact"
+          class="rounded-full border border-neutral-300 px-6 py-2.5 text-sm font-medium text-neutral-900 transition-colors hover:border-neutral-900"
+        >
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
