@@ -1,0 +1,38 @@
+---
+import { socials } from '../data/socials'
+---
+
+<footer
+  id="contact"
+  class="scroll-mt-24 border-t border-neutral-200 bg-neutral-50"
+>
+  <div class="mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
+    <div>
+      <p class="text-sm font-semibold">Gabriel — Software Engineer</p>
+      <p class="mt-1 text-sm text-neutral-600">
+        Open to freelance and full-time roles.
+      </p>
+    </div>
+    <ul
+      aria-label="Social media"
+      class="flex flex-wrap items-center justify-center gap-2"
+    >
+      {socials.map((social) => (
+        <li>
+          <a
+            href={social.href}
+            target={social.href.startsWith('http') ? '_blank' : undefined}
+            rel={social.href.startsWith('http') ? 'me noopener' : undefined}
+            aria-label={social.label}
+            class="rounded-full border border-neutral-200 bg-white px-4 py-1.5 text-sm text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-950"
+          >
+            {social.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <p class="pb-6 text-center text-xs text-neutral-500">
+    © {new Date().getFullYear()} Gabriel. Built with Astro.
+  </p>
+</footer>
