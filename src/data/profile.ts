@@ -13,6 +13,6 @@ export const profile: Profile = {
   tagline: 'I build fast, accessible web applications.',
   summary:
     'Full-stack Software Engineer focused on TypeScript, Astro, and clean component architecture. I ship responsive, static-first sites with a strong eye for maintainability.',
-  imageSrc: '/profile.jpg',
-  imageAlt: 'Portrait of Gabriel, software engineer',
+  imageSrc: '/avatar-placeholder.svg',
+  imageAlt: 'Empty avatar placeholder',
 }
