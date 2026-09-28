@@ -5,7 +5,7 @@ export interface Social {
 
 export const socials: Social[] = [
   { label: 'GitHub', href: 'https://github.com/gabrielenr10' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gabriel-iglesias-m' },
   { label: 'X', href: 'https://x.com/' },
-  { label: 'Email', href: 'mailto:hello@example.com' },
+  { label: 'Email', href: 'mailto:gabrielenr10@gmail.com' },
 ]
