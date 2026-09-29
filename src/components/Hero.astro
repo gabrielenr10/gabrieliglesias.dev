@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets'
 import type { Profile } from '../data/profile'
 import { socials, type Social } from '../data/socials'
+import avatar from '../assets/avatar.jpeg'
 import GitHubIcon from './icons/GitHubIcon.astro'
 import GmailIcon from './icons/GmailIcon.astro'
 import LinkedInIcon from './icons/LinkedInIcon.astro'
@@ -82,15 +84,15 @@ const heroSocials = socials.filter(
       </ul>
     </div>
     <div class="order-1 mx-auto md:order-2 md:justify-self-center">
-      <img
-        src={profile.imageSrc}
+      <Image
+        src={avatar}
         alt={profile.imageAlt}
-        width="320"
-        height="320"
+        width={320}
+        height={320}
+        format="webp"
         loading="eager"
         decoding="async"
-        class="h-28 w-28 rounded-full border border-neutral-200 bg-neutral-100 object-cover sm:h-32 sm:w-32 md:h-40 md:w-40"
-        onerror="this.onerror=null;this.src='/avatar-placeholder.svg'"
+        class="h-28 w-28 rounded-full border-4 border-white bg-neutral-100 object-cover shadow-md ring-2 ring-neutral-200 sm:h-32 sm:w-32 md:h-40 md:w-40"
       />
     </div>
   </div>
