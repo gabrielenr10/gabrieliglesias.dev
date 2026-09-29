@@ -1,0 +1,81 @@
+---
+import type { SkillIconKey, SkillItem } from '../data/skills'
+import VueIcon from '@components/icons/skills/VueIcon.astro'
+import ReactIcon from '@components/icons/skills/ReactIcon.astro'
+import TypeScriptIcon from '@components/icons/skills/TypeScriptIcon.astro'
+import JavaScriptIcon from '@components/icons/skills/JavaScriptIcon.astro'
+import HtmlIcon from '@components/icons/skills/HtmlIcon.astro'
+import CssIcon from '@components/icons/skills/CssIcon.astro'
+import AstroIcon from '@components/icons/skills/AstroIcon.astro'
+import TailwindIcon from '@components/icons/skills/TailwindIcon.astro'
+import VitestIcon from '@components/icons/skills/VitestIcon.astro'
+import PlaywrightIcon from '@components/icons/skills/PlaywrightIcon.astro'
+import PythonIcon from '@components/icons/skills/PythonIcon.astro'
+import FastApiIcon from '@components/icons/skills/FastApiIcon.astro'
+import NodeJsIcon from '@components/icons/skills/NodeJsIcon.astro'
+import PostgreSqlIcon from '@components/icons/skills/PostgreSqlIcon.astro'
+import MongoDbIcon from '@components/icons/skills/MongoDbIcon.astro'
+import PytestIcon from '@components/icons/skills/PytestIcon.astro'
+import GitIcon from '@components/icons/skills/GitIcon.astro'
+import DockerIcon from '@components/icons/skills/DockerIcon.astro'
+import AwsIcon from '@components/icons/skills/AwsIcon.astro'
+import ClaudeCodeIcon from '@components/icons/skills/ClaudeCodeIcon.astro'
+import OpenCodeIcon from '@components/icons/skills/OpenCodeIcon.astro'
+import CursorIcon from '@components/icons/skills/CursorIcon.astro'
+import McpIcon from '@components/icons/skills/McpIcon.astro'
+
+interface Props {
+  area: string
+  items: SkillItem[]
+}
+
+const { area, items } = Astro.props
+
+const icons: Record<SkillIconKey, typeof VueIcon> = {
+  vue: VueIcon,
+  react: ReactIcon,
+  typescript: TypeScriptIcon,
+  javascript: JavaScriptIcon,
+  html: HtmlIcon,
+  css: CssIcon,
+  astro: AstroIcon,
+  tailwind: TailwindIcon,
+  vitest: VitestIcon,
+  playwright: PlaywrightIcon,
+  python: PythonIcon,
+  fastapi: FastApiIcon,
+  nodejs: NodeJsIcon,
+  postgresql: PostgreSqlIcon,
+  mongodb: MongoDbIcon,
+  pytest: PytestIcon,
+  git: GitIcon,
+  docker: DockerIcon,
+  aws: AwsIcon,
+  'claude-code': ClaudeCodeIcon,
+  opencode: OpenCodeIcon,
+  cursor: CursorIcon,
+  mcp: McpIcon,
+}
+---
+
+<div>
+  <h3 class="flex items-baseline gap-2 text-sm font-semibold uppercase tracking-widest text-neutral-500">
+    {area}
+    <span class="text-xs font-normal normal-case tracking-normal text-neutral-400">
+      {items.length}
+    </span>
+  </h3>
+  <ul class="mt-4 flex flex-wrap gap-3">
+    {items.map((skill) => {
+      const Icon = icons[skill.icon]
+      return (
+        <li class="flex w-28 flex-col items-center gap-2 rounded-xl border border-neutral-200 bg-white px-3 py-4 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+          <Icon class="h-10 w-10" />
+          <span class="text-sm font-medium leading-tight text-neutral-800">
+            {skill.name}
+          </span>
+        </li>
+      )
+    })}
+  </ul>
+</div>

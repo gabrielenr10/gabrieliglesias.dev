@@ -1,6 +1,6 @@
 ---
 import SectionHeading from '@components/SectionHeading.astro'
-import SkillCard from '@components/SkillCard.astro'
+import SkillGroupBlock from '@components/SkillGroup.astro'
 import type { SkillGroup } from '../data/skills'
 
 interface Props {
@@ -21,9 +21,9 @@ const { groups } = Astro.props
       title="Skills"
       description="Grouped by area for quick scanning."
     />
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+    <div class="space-y-10">
       {groups.map((group) => (
-        <SkillCard area={group.area} items={group.items} />
+        <SkillGroupBlock area={group.area} items={group.items} />
       ))}
     </div>
   </div>
