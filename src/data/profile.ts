@@ -10,10 +10,9 @@ export interface Profile {
 export const profile: Profile = {
   name: 'Gabriel Iglesias',
   role: 'Software Engineer',
-  tagline:
-    '8+ years delivering production software across ESG, TV, banking, and telecom.',
+  tagline: '8+ years of experience building software.',
   summary:
-    'Full-stack software engineer with 8+ years of experience across ESG, TV, online banking, and telecommunications. Experienced in technical leadership and hands-on full-stack development — leading teams, driving technical decisions, and building scalable, high-quality software. Passionate about AI and LLM-powered workflows for developer productivity, software architecture automation, and product delivery.',
+    'Full-stack software engineer who enjoys working on both frontend and backend development. I have a passion for continuous learning, embracing new challenges, and striving for clean code, best practices, performance, and usability. Passionate about AI and LLM-powered workflows that boost developer productivity.',
   imageSrc: '/avatar-placeholder.svg',
   imageAlt: 'Empty avatar placeholder',
 }
