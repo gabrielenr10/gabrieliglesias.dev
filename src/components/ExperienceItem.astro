@@ -19,7 +19,12 @@ const { item } = Astro.props
     </h3>
     <p class="shrink-0 text-xs text-neutral-500">{item.period}</p>
   </div>
-  <p class="mt-0.5 text-xs text-neutral-500">{item.location}</p>
+  <p class="mt-1 flex flex-wrap items-center gap-2 text-xs text-neutral-500">
+    <span>{item.location}</span>
+    <span class="inline-flex items-center rounded-full border border-neutral-300 px-2 py-0.5 text-[11px] font-medium text-neutral-700">
+      {item.workMode}
+    </span>
+  </p>
   <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-neutral-700">
     {item.highlights.map((point) => (
       <li>{point}</li>

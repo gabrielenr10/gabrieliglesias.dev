@@ -7,15 +7,13 @@ export interface Education {
 
 export const education: Education[] = [
   {
-    school: 'B.S. Computer Science',
-    degree: 'Bachelor of Science',
-    period: '2017 — 2021',
-    notes: 'Focus on software engineering, databases, and web systems.',
+    school: 'Simón Bolívar University',
+    degree: "Bachelor's Degree in Computer Engineering",
+    period: '2011 — 2018',
   },
   {
-    school: 'Online Certifications',
-    degree: 'Continuous learning',
-    period: '2021 — Present',
-    notes: 'Modern TypeScript, cloud fundamentals, and CI/CD practices.',
+    school: 'ILAC, Canada',
+    degree: 'English as a Second Language',
+    period: '2015',
   },
 ]
